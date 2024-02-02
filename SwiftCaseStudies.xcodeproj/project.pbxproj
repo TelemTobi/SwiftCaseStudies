@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7A29F02B6D353200E0BCDB /* SwiftCaseStudiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A29EF2B6D353200E0BCDB /* SwiftCaseStudiesApp.swift */; };
-		7D7A29F22B6D353200E0BCDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A29F12B6D353200E0BCDB /* ContentView.swift */; };
+		7D7A29F22B6D353200E0BCDB /* 01-Observation-Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A29F12B6D353200E0BCDB /* 01-Observation-Demo.swift */; };
 		7D7A29F42B6D353600E0BCDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7A29F32B6D353600E0BCDB /* Assets.xcassets */; };
 		7D7A29F72B6D353600E0BCDB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7A29F62B6D353600E0BCDB /* Preview Assets.xcassets */; };
+		7D7A29FF2B6D3B7200E0BCDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A29FE2B6D3B7200E0BCDB /* ContentView.swift */; };
+		7D7A2A012B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A002B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D7A29EC2B6D353200E0BCDB /* SwiftCaseStudies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCaseStudies.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D7A29EF2B6D353200E0BCDB /* SwiftCaseStudiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCaseStudiesApp.swift; sourceTree = "<group>"; };
-		7D7A29F12B6D353200E0BCDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7D7A29F12B6D353200E0BCDB /* 01-Observation-Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "01-Observation-Demo.swift"; sourceTree = "<group>"; };
 		7D7A29F32B6D353600E0BCDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D7A29F62B6D353600E0BCDB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7D7A29FE2B6D3B7200E0BCDB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7D7A2A002B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCaseStudiesApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +53,8 @@
 		7D7A29EE2B6D353200E0BCDB /* SwiftCaseStudies */ = {
 			isa = PBXGroup;
 			children = (
-				7D7A29EF2B6D353200E0BCDB /* SwiftCaseStudiesApp.swift */,
-				7D7A29F12B6D353200E0BCDB /* ContentView.swift */,
-				7D7A29F32B6D353600E0BCDB /* Assets.xcassets */,
-				7D7A29F52B6D353600E0BCDB /* Preview Content */,
+				7D7A2A022B6D3B9100E0BCDB /* App */,
+				7D7A29F12B6D353200E0BCDB /* 01-Observation-Demo.swift */,
 			);
 			path = SwiftCaseStudies;
 			sourceTree = "<group>";
@@ -65,6 +65,17 @@
 				7D7A29F62B6D353600E0BCDB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7D7A2A022B6D3B9100E0BCDB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7D7A29FE2B6D3B7200E0BCDB /* ContentView.swift */,
+				7D7A2A002B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift */,
+				7D7A29F32B6D353600E0BCDB /* Assets.xcassets */,
+				7D7A29F52B6D353600E0BCDB /* Preview Content */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7A29F22B6D353200E0BCDB /* ContentView.swift in Sources */,
-				7D7A29F02B6D353200E0BCDB /* SwiftCaseStudiesApp.swift in Sources */,
+				7D7A29FF2B6D3B7200E0BCDB /* ContentView.swift in Sources */,
+				7D7A29F22B6D353200E0BCDB /* 01-Observation-Demo.swift in Sources */,
+				7D7A2A012B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +283,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftCaseStudies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftCaseStudies/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 765F9357QN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +312,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftCaseStudies/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftCaseStudies/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 765F9357QN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
