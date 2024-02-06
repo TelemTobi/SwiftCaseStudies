@@ -29,8 +29,12 @@ struct TransferNavigator {
         
         Reduce { state, action in
             switch action {
+            case .root(.onContinueTap):
+                state.path.append(.amount(AmountReducer.State()))
+                return .none
+                
             case .root(.onCloseTap),
-                    .path(.element(_, action: .contacts(.onCloseTap))):
+                 .path(.element(_, action: .amount(.onCloseTap))):
                 return .run { _ in
                     await dismiss()
                 }
@@ -52,15 +56,15 @@ extension TransferNavigator {
         
         @ObservableState
         enum State: Equatable {
-            case contacts(ContactsReducer.State)
+            case amount(AmountReducer.State)
         }
         
         enum Action {
-            case contacts(ContactsReducer.Action)
+            case amount(AmountReducer.Action)
         }
         
         var body: some ReducerOf<Self> {
-            Scope(state: \.contacts, action: \.contacts, child: ContactsReducer.init)
+            Scope(state: \.amount, action: \.amount, child: AmountReducer.init)
         }
     }
 }

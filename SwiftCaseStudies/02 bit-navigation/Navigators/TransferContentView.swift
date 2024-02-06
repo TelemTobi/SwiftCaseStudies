@@ -20,9 +20,9 @@ extension TransferNavigator {
                 root: { ContactsView(store: store.scope(state: \.root, action: \.root)) },
                 destination: { store in
                     switch store.state {
-                    case .contacts:
-                        if let store = store.scope(state: \.contacts, action: \.contacts) {
-                            ContactsView(store: store)
+                    case .amount:
+                        if let store = store.scope(state: \.amount, action: \.amount) {
+                            AmountView(store: store)
                         }
                     }
                 }
