@@ -36,6 +36,9 @@ struct HomeReducer {
                 return .none
             }
         }
+        .ifLet(\.$destination, action: \.destination) {
+            Destination()
+        }
     }
 }
 

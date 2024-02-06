@@ -25,11 +25,22 @@ struct TransferNavigator {
     @Dependency(\.dismiss) private var dismiss
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.root, action: \.root, child: ContactsReducer.init)
+        
         Reduce { state, action in
             switch action {
+            case .root(.onCloseTap),
+                    .path(.element(_, action: .contacts(.onCloseTap))):
+                return .run { _ in
+                    await dismiss()
+                }
+                
             case .root, .path:
                 return .none
             }
+        }
+        .forEach(\.path, action: \.path) {
+            Path()
         }
     }
 }

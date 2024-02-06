@@ -17,13 +17,15 @@ struct ContactsReducer {
     }
     
     enum Action {
+        case onCloseTap
         case onContinueTap
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .onContinueTap:
+            // Navigation actions are handled in the parent Navigator reducer
+            case .onCloseTap, .onContinueTap:
                 return .none
             }
         }
