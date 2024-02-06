@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Button(
-                action: { },
+                action: { store.send(.onTransferTap) },
                 label: {
                     Label("Transfer", systemImage: "arrow.up.right")
                 }
@@ -23,7 +23,7 @@ struct HomeView: View {
             .tint(.pink)
             
             Button(
-                action: { },
+                action: { store.send(.onRequestTap) },
                 label: {
                     Label("Request", systemImage: "arrow.down.left")
                 }
@@ -32,7 +32,20 @@ struct HomeView: View {
         }
         .bold()
         .buttonStyle(.borderedProminent)
-        .frame(maxWidth: .infinity)
+        .fullScreenCover(
+            item: $store.scope(state: \.destination, action: \.destination),
+            content: { store in
+                switch store.state {
+                case .transfer:
+                    if let store = store.scope(state: \.transfer, action: \.transfer) {
+                        TransferNavigator.ContentView(store: store)
+                    }
+                    
+                case .request:
+                    EmptyView()
+                }
+            }
+        )
     }
 }
 

@@ -17,6 +17,7 @@ struct HomeReducer {
     }
     
     enum Action {
+        case destination(PresentationAction<Destination.Action>)
         case onTransferTap
         case onRequestTap
     }
@@ -25,9 +26,13 @@ struct HomeReducer {
         Reduce { state, action in
             switch action {
             case .onTransferTap:
+                state.destination = .transfer(TransferNavigator.State())
                 return .none
                 
             case .onRequestTap:
+                return .none
+                
+            case .destination:
                 return .none
             }
         }
@@ -41,19 +46,17 @@ extension HomeReducer {
         
         @ObservableState
         enum State: Equatable {
-            case transfer
+            case transfer(TransferNavigator.State)
             case request
         }
         
         enum Action {
-            case transfer
+            case transfer(TransferNavigator.Action)
             case request
         }
         
         var body: some ReducerOf<Self> {
-            Reduce { state, action in
-                return .none
-            }
+            Scope(state: \.transfer, action: \.transfer, child: TransferNavigator.init)
         }
     }
 }

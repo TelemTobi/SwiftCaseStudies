@@ -18,6 +18,8 @@
 		7D7A2A1C2B72949200E0BCDB /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A1B2B72949200E0BCDB /* HomeReducer.swift */; };
 		7D7A2A222B72988500E0BCDB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A212B72988500E0BCDB /* ContactsView.swift */; };
 		7D7A2A242B72989700E0BCDB /* ContactsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A232B72989700E0BCDB /* ContactsReducer.swift */; };
+		7D7A2A262B729BB200E0BCDB /* TransferNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A252B729BB200E0BCDB /* TransferNavigator.swift */; };
+		7D7A2A282B729FF800E0BCDB /* TransferContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A272B729FF800E0BCDB /* TransferContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		7D7A2A1B2B72949200E0BCDB /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
 		7D7A2A212B72988500E0BCDB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		7D7A2A232B72989700E0BCDB /* ContactsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsReducer.swift; sourceTree = "<group>"; };
+		7D7A2A252B729BB200E0BCDB /* TransferNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferNavigator.swift; sourceTree = "<group>"; };
+		7D7A2A272B729FF800E0BCDB /* TransferContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 		7D7A2A1F2B7294AB00E0BCDB /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
+				7D7A2A252B729BB200E0BCDB /* TransferNavigator.swift */,
+				7D7A2A272B729FF800E0BCDB /* TransferContentView.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 			files = (
 				7D7A2A242B72989700E0BCDB /* ContactsReducer.swift in Sources */,
 				7D7A29FF2B6D3B7200E0BCDB /* ContentView.swift in Sources */,
+				7D7A2A262B729BB200E0BCDB /* TransferNavigator.swift in Sources */,
 				7D7A2A1C2B72949200E0BCDB /* HomeReducer.swift in Sources */,
+				7D7A2A282B729FF800E0BCDB /* TransferContentView.swift in Sources */,
 				7D7A2A1A2B72948200E0BCDB /* HomeView.swift in Sources */,
 				7D7A2A222B72988500E0BCDB /* ContactsView.swift in Sources */,
 				7D7A29F22B6D353200E0BCDB /* ObservationDemo.swift in Sources */,
