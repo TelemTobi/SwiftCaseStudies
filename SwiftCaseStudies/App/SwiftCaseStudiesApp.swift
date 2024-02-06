@@ -11,7 +11,12 @@ import SwiftUI
 struct SwiftCaseStudiesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(
+                store: .init(
+                    initialState: HomeReducer.State(),
+                    reducer: { HomeReducer() }
+                )
+            )
         }
     }
 }
