@@ -16,6 +16,8 @@
 		7D7A2A0F2B6EA55400E0BCDB /* SwiftCaseStudiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A0E2B6EA55400E0BCDB /* SwiftCaseStudiesTests.swift */; };
 		7D7A2A1A2B72948200E0BCDB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A192B72948200E0BCDB /* HomeView.swift */; };
 		7D7A2A1C2B72949200E0BCDB /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A1B2B72949200E0BCDB /* HomeReducer.swift */; };
+		7D7A2A222B72988500E0BCDB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A212B72988500E0BCDB /* ContactsView.swift */; };
+		7D7A2A242B72989700E0BCDB /* ContactsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A232B72989700E0BCDB /* ContactsReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		7D7A2A0E2B6EA55400E0BCDB /* SwiftCaseStudiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCaseStudiesTests.swift; sourceTree = "<group>"; };
 		7D7A2A192B72948200E0BCDB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7D7A2A1B2B72949200E0BCDB /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
+		7D7A2A212B72988500E0BCDB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		7D7A2A232B72989700E0BCDB /* ContactsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7A2A1D2B72949800E0BCDB /* Home */,
+				7D7A2A202B72986D00E0BCDB /* Contacts */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -154,6 +159,15 @@
 			children = (
 			);
 			path = Navigators;
+			sourceTree = "<group>";
+		};
+		7D7A2A202B72986D00E0BCDB /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7D7A2A212B72988500E0BCDB /* ContactsView.swift */,
+				7D7A2A232B72989700E0BCDB /* ContactsReducer.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D7A2A242B72989700E0BCDB /* ContactsReducer.swift in Sources */,
 				7D7A29FF2B6D3B7200E0BCDB /* ContentView.swift in Sources */,
 				7D7A2A1C2B72949200E0BCDB /* HomeReducer.swift in Sources */,
 				7D7A2A1A2B72948200E0BCDB /* HomeView.swift in Sources */,
+				7D7A2A222B72988500E0BCDB /* ContactsView.swift in Sources */,
 				7D7A29F22B6D353200E0BCDB /* ObservationDemo.swift in Sources */,
 				7D7A2A012B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift in Sources */,
 			);
