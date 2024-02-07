@@ -18,14 +18,14 @@ struct ReasonReducer {
     
     enum Action {
         case onCloseTap
-        case onContinueTap
+        case didSelectReason(String)
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             // Navigation actions are handled in the parent Navigator reducer
-            case .onCloseTap, .onContinueTap:
+            case .onCloseTap, .didSelectReason:
                 return .none
             }
         }

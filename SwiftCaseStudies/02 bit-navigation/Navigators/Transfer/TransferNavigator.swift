@@ -15,6 +15,8 @@ struct TransferNavigator {
     struct State: Equatable {
         var root = ContactsReducer.State()
         var path = StackState<Path.State>()
+        
+        var transfer = Transfer()
     }
     
     enum Action {
@@ -29,12 +31,19 @@ struct TransferNavigator {
         
         Reduce { state, action in
             switch action {
-            case .root(.onContinueTap):
+            case let .root(.didSelectContact(contact)):
+                state.transfer.contact = contact
                 state.path.append(.amount(AmountReducer.State()))
                 return .none
                 
-            case .path(.element(_, action: .amount(.onContinueTap))):
+            case let .path(.element(_, action: .amount(.didSelectAmount(amount)))):
+                state.transfer.amount = amount
                 state.path.append(.reason(ReasonReducer.State()))
+                return .none
+                
+            case let .path(.element(_, action: .reason(.didSelectReason(reason)))):
+                state.transfer.reason = reason
+                // Pass the transfer to an approval module or whatever..
                 return .none
                 
             case .root(.onCloseTap),
@@ -75,4 +84,10 @@ extension TransferNavigator {
             Scope(state: \.reason, action: \.reason, child: ReasonReducer.init)
         }
     }
+}
+
+struct Transfer: Equatable {
+    var contact: String?
+    var amount: Float?
+    var reason: String?
 }

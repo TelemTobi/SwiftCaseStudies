@@ -12,12 +12,14 @@ struct ReasonView: View {
     
     let store: StoreOf<ReasonReducer>
     
+    @Environment(\.themeColor) private var themeColor
+    
     var body: some View {
         VStack {
             Spacer()
             
             Button(
-                action: { store.send(.onContinueTap) },
+                action: { store.send(.didSelectReason("some reason")) },
                 label: {
                     Text("Continue")
                         .bold()
@@ -25,6 +27,7 @@ struct ReasonView: View {
                         .frame(maxWidth: .infinity)
                 }
             )
+            .tint(themeColor)
             .buttonStyle(.borderedProminent)
             .padding(.horizontal)
         }

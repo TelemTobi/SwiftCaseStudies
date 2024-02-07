@@ -12,12 +12,14 @@ struct AmountView: View {
     
     let store: StoreOf<AmountReducer>
     
+    @Environment(\.themeColor) private var themeColor
+    
     var body: some View {
         VStack {
             Spacer()
             
             Button(
-                action: { store.send(.onContinueTap) },
+                action: { store.send(.didSelectAmount(50)) },
                 label: {
                     Text("Continue")
                         .bold()
@@ -25,6 +27,7 @@ struct AmountView: View {
                         .frame(maxWidth: .infinity)
                 }
             )
+            .tint(themeColor)
             .buttonStyle(.borderedProminent)
             .padding(.horizontal)
         }

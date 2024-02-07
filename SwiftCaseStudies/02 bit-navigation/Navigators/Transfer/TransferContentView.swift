@@ -32,6 +32,7 @@ extension TransferNavigator {
                     }
                 }
             )
+            .environment(\.themeColor, .pink)
         }
     }
 }

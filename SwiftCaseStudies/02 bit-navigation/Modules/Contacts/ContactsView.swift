@@ -12,12 +12,14 @@ struct ContactsView: View {
     
     let store: StoreOf<ContactsReducer>
     
+    @Environment(\.themeColor) private var themeColor
+    
     var body: some View {
         VStack {
             Spacer()
             
             Button(
-                action: { store.send(.onContinueTap) },
+                action: { store.send(.didSelectContact("some contact")) },
                 label: {
                     Text("Continue")
                         .bold()
@@ -25,6 +27,7 @@ struct ContactsView: View {
                         .frame(maxWidth: .infinity)
                 }
             )
+            .tint(themeColor)
             .buttonStyle(.borderedProminent)
             .padding(.horizontal)
         }

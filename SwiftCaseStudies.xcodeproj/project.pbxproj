@@ -24,6 +24,7 @@
 		7D7A2A2D2B72A59A00E0BCDB /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A2C2B72A59A00E0BCDB /* AmountView.swift */; };
 		7D7A2A312B7367CB00E0BCDB /* ReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A302B7367CB00E0BCDB /* ReasonView.swift */; };
 		7D7A2A332B7367D700E0BCDB /* ReasonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A322B7367D700E0BCDB /* ReasonReducer.swift */; };
+		7D7A2A362B736D1E00E0BCDB /* ThemeColorEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7A2A352B736D1E00E0BCDB /* ThemeColorEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7D7A2A2C2B72A59A00E0BCDB /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		7D7A2A302B7367CB00E0BCDB /* ReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonView.swift; sourceTree = "<group>"; };
 		7D7A2A322B7367D700E0BCDB /* ReasonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonReducer.swift; sourceTree = "<group>"; };
+		7D7A2A352B736D1E00E0BCDB /* ThemeColorEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColorEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		7D7A2A022B6D3B9100E0BCDB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7D7A2A342B736D0100E0BCDB /* Utilitiy */,
 				7D7A29FE2B6D3B7200E0BCDB /* ContentView.swift */,
 				7D7A2A002B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift */,
 				7D7A29F32B6D353600E0BCDB /* Assets.xcassets */,
@@ -210,6 +213,14 @@
 				7D7A2A322B7367D700E0BCDB /* ReasonReducer.swift */,
 			);
 			path = Reason;
+			sourceTree = "<group>";
+		};
+		7D7A2A342B736D0100E0BCDB /* Utilitiy */ = {
+			isa = PBXGroup;
+			children = (
+				7D7A2A352B736D1E00E0BCDB /* ThemeColorEnvironment.swift */,
+			);
+			path = Utilitiy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				7D7A2A262B729BB200E0BCDB /* TransferNavigator.swift in Sources */,
 				7D7A2A1C2B72949200E0BCDB /* HomeReducer.swift in Sources */,
 				7D7A2A2B2B72A58200E0BCDB /* AmountReducer.swift in Sources */,
+				7D7A2A362B736D1E00E0BCDB /* ThemeColorEnvironment.swift in Sources */,
 				7D7A2A2D2B72A59A00E0BCDB /* AmountView.swift in Sources */,
 				7D7A2A282B729FF800E0BCDB /* TransferContentView.swift in Sources */,
 				7D7A2A1A2B72948200E0BCDB /* HomeView.swift in Sources */,
