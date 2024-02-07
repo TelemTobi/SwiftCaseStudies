@@ -33,8 +33,13 @@ struct TransferNavigator {
                 state.path.append(.amount(AmountReducer.State()))
                 return .none
                 
+            case .path(.element(_, action: .amount(.onContinueTap))):
+                state.path.append(.reason(ReasonReducer.State()))
+                return .none
+                
             case .root(.onCloseTap),
-                 .path(.element(_, action: .amount(.onCloseTap))):
+                 .path(.element(_, action: .amount(.onCloseTap))),
+                 .path(.element(_, action: .reason(.onCloseTap))):
                 return .run { _ in
                     await dismiss()
                 }
@@ -57,14 +62,17 @@ extension TransferNavigator {
         @ObservableState
         enum State: Equatable {
             case amount(AmountReducer.State)
+            case reason(ReasonReducer.State)
         }
         
         enum Action {
             case amount(AmountReducer.Action)
+            case reason(ReasonReducer.Action)
         }
         
         var body: some ReducerOf<Self> {
             Scope(state: \.amount, action: \.amount, child: AmountReducer.init)
+            Scope(state: \.reason, action: \.reason, child: ReasonReducer.init)
         }
     }
 }

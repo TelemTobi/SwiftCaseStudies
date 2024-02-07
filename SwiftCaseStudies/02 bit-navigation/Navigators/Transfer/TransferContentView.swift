@@ -24,6 +24,11 @@ extension TransferNavigator {
                         if let store = store.scope(state: \.amount, action: \.amount) {
                             AmountView(store: store)
                         }
+                        
+                    case .reason:
+                        if let store = store.scope(state: \.reason, action: \.reason) {
+                            ReasonView(store: store)
+                        }
                     }
                 }
             )
