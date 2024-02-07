@@ -39,7 +39,7 @@ struct AmountView: View {
     private func toolbarContent() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button(
-                action: { store.send(.onCloseTap) },
+                action: { store.send(.didTapClose) },
                 label: { Image(systemName: "xmark") }
             )
         }

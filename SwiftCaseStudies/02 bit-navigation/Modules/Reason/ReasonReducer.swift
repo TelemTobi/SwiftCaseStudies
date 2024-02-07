@@ -17,7 +17,7 @@ struct ReasonReducer {
     }
     
     enum Action {
-        case onCloseTap
+        case didTapClose
         case didSelectReason(String)
     }
     
@@ -25,7 +25,7 @@ struct ReasonReducer {
         Reduce { state, action in
             switch action {
             // Navigation actions are handled in the parent Navigator reducer
-            case .onCloseTap, .didSelectReason:
+            case .didTapClose, .didSelectReason:
                 return .none
             }
         }

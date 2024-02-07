@@ -46,9 +46,9 @@ struct TransferNavigator {
                 // Pass the transfer to an approval module or whatever..
                 return .none
                 
-            case .root(.onCloseTap),
-                 .path(.element(_, action: .amount(.onCloseTap))),
-                 .path(.element(_, action: .reason(.onCloseTap))):
+            case .root(.didTapClose),
+                 .path(.element(_, action: .amount(.didTapClose))),
+                 .path(.element(_, action: .reason(.didTapClose))):
                 return .run { _ in
                     await dismiss()
                 }

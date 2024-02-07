@@ -117,11 +117,11 @@
 		7D7A2A022B6D3B9100E0BCDB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7D7A2A342B736D0100E0BCDB /* Utilitiy */,
 				7D7A29FE2B6D3B7200E0BCDB /* ContentView.swift */,
 				7D7A2A002B6D3B7B00E0BCDB /* SwiftCaseStudiesApp.swift */,
 				7D7A29F32B6D353600E0BCDB /* Assets.xcassets */,
 				7D7A29F52B6D353600E0BCDB /* Preview Content */,
+				7D7A2A342B736D0100E0BCDB /* Utilitiy */,
 			);
 			path = App;
 			sourceTree = "<group>";

@@ -17,7 +17,7 @@ struct ContactsReducer {
     }
     
     enum Action {
-        case onCloseTap
+        case didTapClose
         case didSelectContact(String)
     }
     
@@ -25,7 +25,7 @@ struct ContactsReducer {
         Reduce { state, action in
             switch action {
             // Navigation actions are handled in the parent Navigator reducer
-            case .onCloseTap, .didSelectContact:
+            case .didTapClose, .didSelectContact:
                 return .none
             }
         }
