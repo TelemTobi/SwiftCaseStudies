@@ -30,6 +30,7 @@ struct HomeReducer {
                 return .none
                 
             case .onRequestTap:
+                state.destination = .request(RequestNavigator.State())
                 return .none
                 
             case .destination:
@@ -50,16 +51,17 @@ extension HomeReducer {
         @ObservableState
         enum State: Equatable {
             case transfer(TransferNavigator.State)
-            case request
+            case request(RequestNavigator.State)
         }
         
         enum Action {
             case transfer(TransferNavigator.Action)
-            case request
+            case request(RequestNavigator.Action)
         }
         
         var body: some ReducerOf<Self> {
             Scope(state: \.transfer, action: \.transfer, child: TransferNavigator.init)
+            Scope(state: \.request, action: \.request, child: RequestNavigator.init)
         }
     }
 }

@@ -42,7 +42,9 @@ struct HomeView: View {
                     }
                     
                 case .request:
-                    EmptyView()
+                    if let store = store.scope(state: \.request, action: \.request) {
+                        RequestNavigator.ContentView(store: store)
+                    }
                 }
             }
         )
