@@ -22,6 +22,7 @@ struct TransferNavigator {
     enum Action {
         case root(ContactsReducer.Action)
         case path(StackAction<Path.State, Path.Action>)
+        case didTapClose
     }
     
     @Dependency(\.dismiss) private var dismiss
@@ -46,9 +47,7 @@ struct TransferNavigator {
                 // Pass the transfer to an approval module or whatever..
                 return .none
                 
-            case .root(.didTapClose),
-                 .path(.element(_, action: .amount(.didTapClose))),
-                 .path(.element(_, action: .reason(.didTapClose))):
+            case .didTapClose:
                 return .run { _ in
                     await dismiss()
                 }

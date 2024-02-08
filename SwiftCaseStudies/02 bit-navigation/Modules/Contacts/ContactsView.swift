@@ -32,17 +32,6 @@ struct ContactsView: View {
             .padding(.horizontal)
         }
         .navigationTitle("Contacts")
-        .toolbar(content: toolbarContent)
-    }
-    
-    @ToolbarContentBuilder
-    private func toolbarContent() -> some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button(
-                action: { store.send(.didTapClose) },
-                label: { Image(systemName: "xmark") }
-            )
-        }
     }
 }
 

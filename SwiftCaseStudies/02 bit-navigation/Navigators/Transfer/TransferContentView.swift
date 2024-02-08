@@ -17,22 +17,38 @@ extension TransferNavigator {
         var body: some View {
             NavigationStack(
                 path: $store.scope(state: \.path, action: \.path),
-                root: { ContactsView(store: store.scope(state: \.root, action: \.root)) },
+                root: {
+                    ContactsView(store: store.scope(state: \.root, action: \.root))
+                        .toolbar(content: toolbarContent)
+                },
                 destination: { store in
-                    switch store.state {
-                    case .amount:
-                        if let store = store.scope(state: \.amount, action: \.amount) {
-                            AmountView(store: store)
-                        }
-                        
-                    case .reason:
-                        if let store = store.scope(state: \.reason, action: \.reason) {
-                            ReasonView(store: store)
+                    Group {
+                        switch store.state {
+                        case .amount:
+                            if let store = store.scope(state: \.amount, action: \.amount) {
+                                AmountView(store: store)
+                            }
+                            
+                        case .reason:
+                            if let store = store.scope(state: \.reason, action: \.reason) {
+                                ReasonView(store: store)
+                            }
                         }
                     }
+                    .toolbar(content: toolbarContent)
                 }
             )
             .environment(\.themeColor, .pink)
+        }
+        
+        @ToolbarContentBuilder
+        private func toolbarContent() -> some ToolbarContent {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(
+                    action: { store.send(.didTapClose) },
+                    label: { Image(systemName: "xmark") }
+                )
+            }
         }
     }
 }

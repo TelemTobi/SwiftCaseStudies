@@ -17,7 +17,6 @@ struct AmountReducer {
     }
     
     enum Action {
-        case didTapClose
         case didSelectAmount(Float)
     }
     
@@ -25,7 +24,7 @@ struct AmountReducer {
         Reduce { state, action in
             switch action {
             // Navigation actions are handled in the parent Navigator reducer
-            case .didTapClose, .didSelectAmount:
+            case .didSelectAmount:
                 return .none
             }
         }
