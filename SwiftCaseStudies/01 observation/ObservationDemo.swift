@@ -45,6 +45,45 @@ struct PreCounterView: View {
 
 // MARK: - Post-Observation
 
+@Observable
+class PostCounterViewModel {
+    var count: Int = 0
+    var isVisible: Bool = true
+}
+
+struct PostCounterView: View {
+    private let viewModel = PostCounterViewModel()
+    
+    var body: some View {
+        let _ = Self._printChanges()
+        
+        VStack {
+            if viewModel.isVisible {
+                Text(viewModel.count.description)
+            }
+            
+            HStack {
+                Button("-") { viewModel.count -= 1 }
+                Button("+") { viewModel.count += 1 }
+            }
+            .buttonStyle(.borderedProminent)
+            
+            Button("Toggle Visibility") {
+                viewModel.isVisible.toggle()
+            }
+            .buttonStyle(.bordered)
+        }
+        .padding()
+        .animation(.snappy, value: viewModel.isVisible)
+    }
+}
+
+#Preview {
+    PostCounterView()
+}
+
+// MARK: - TCA
+
 @Reducer
 struct CounterFeature {
     
@@ -85,7 +124,7 @@ struct CounterFeature {
     }
 }
 
-struct PostCounterView: View {
+struct CounterView: View {
     
     @Bindable var store: StoreOf<CounterFeature>
     
@@ -98,8 +137,8 @@ struct PostCounterView: View {
             }
             
             HStack {
-                Button("-") { store.send(.incrementCounter) }
-                Button("+") { store.send(.decrementCounter) }
+                Button("-") { store.send(.decrementCounter) }
+                Button("+") { store.send(.incrementCounter) }
             }
             .buttonStyle(.borderedProminent)
             
@@ -118,8 +157,11 @@ struct PostCounterView: View {
 
 #Preview {
     NavigationStack {
-        PostCounterView(store: .init(initialState: .init(), reducer: {
-            CounterFeature()
-        }))
+        CounterView(
+            store: .init(
+                initialState: CounterFeature.State(),
+                reducer: CounterFeature.init
+            )
+        )
     }
 }
